@@ -79,6 +79,7 @@ cap = cv.VideoCapture("input.mp4")
 while (cap.isOpened()):
     # ret = a boolean return value from getting the frame, frame = the current frame being projected in the video
     ret, frame = cap.read()
+    frame = cv.resize(frame,(800,480))
     canny = do_canny(frame)
     cv.imshow("canny", canny)
     # plt.imshow(frame)
